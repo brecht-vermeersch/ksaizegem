@@ -1,0 +1,12 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    
+    globals:
+        sign_up_url: '%env(SIGN_UP_URL)%'
+        shop_url: '%env(SHOP_URL)%'
+        facebook_url: '%env(FACEBOOK_URL)%'
+        instagram_url: '%env(INSTAGRAM_URL)%'
+
+when@test:
+    twig:
+        strict_variables: true

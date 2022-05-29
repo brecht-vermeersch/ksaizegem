@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ include('fragments/_header.html.twig') }}
+
+    {% block page_contents %}{% endblock %}
+
+    {{ include('fragments/_footer.html.twig') }}
+{% endblock %}

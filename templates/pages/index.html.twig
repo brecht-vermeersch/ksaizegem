@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_contents %}
+    <main>
+        <section class="section-banner">
+            <div class="section-banner__content">
+                <h1>Spring mee in het verhaal van KSA</h1>
+                <a href="{{ path('contact') }}" class="btn btn-primary">Laten we ons inschrijven</a>
+            </div>
+        </section>
+
+        <section class="section-general">
+            <div class="first-text">
+                <h2>Algemeen</h2>
+                <p>
+                    We heten je welkom op de site van KSA Izegem (Katholieke studenten Actie). Wij zijn een
+                    jeugdbeweging
+                    die al van 1927 de lach op je zoons gezicht brengt. Dit aan de hand van een zaterdagmiddag met
+                    actieve
+                    en interessante spelletjes. Uiteraard is dit niet het enigste dat wij binnen KSA doen. Wij
+                    organiseren
+                    ook: kampen, weekends, speciale activiteiten voor jong en oud, groot en klein!
+                </p>
+                <a href="{{ path('contact') }}" class="btn btn-secondary">Ik heb vragen!</a>
+            </div>
+
+            <img src="{{ asset('build/images/general.png') }}" alt="Foto van KSA-leden die met water spelen"
+                 class="first-img" width="603" height="383">
+
+            <div class="second-text">
+                <h2>Leeftijdsgroepen</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci consequuntur culpa dignissimos
+                    eligendi esse eum fuga id, in, itaque molestias odio omnis quibusdam reiciendis, repellat
+                    reprehenderit sint tempore veritatis!</p>
+                <a href="{{ path('ageGroups') }}" class="btn btn-secondary">Bezoekje brengen</a>
+            </div>
+
+            <img src="{{ asset('build/images/ageGroups.png') }}" class="second-img" alt="Foto van een KSA-decor" width="600" height="273">
+        </section>
+    </main>
+{% endblock %}

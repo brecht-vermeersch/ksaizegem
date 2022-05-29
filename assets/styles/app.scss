@@ -1,0 +1,322 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0 1rem;
+  margin: 0 auto;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}
+
+@font-face {
+  font-family: CCSignLanguage;
+  src: url(../fonts/CCSignLanguage-Italic.woff2) format("woff2"),
+  url(../fonts/CCSignLanguage-Italic.woff) format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+//
+//@font-face {
+//    font-family: Avenir;
+//    src: url(~@/assets/fonts/AvenirLTStd-Roman.woff2) format("woff2"),
+//    url(~@/assets/fonts/AvenirLTStd-Roman.woff) format("woff");
+//    font-weight: 300;
+//    font-display: swap;
+//}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../fonts/AvenirLTStd-Medium.woff2) format("woff2"),
+  url(../fonts/AvenirLTStd-Medium.woff) format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+//@font-face {
+//    font-family: Avenir;
+//    src: url(~@/assets/fonts/AvenirLTStd-Black.woff2) format("woff2"),
+//    url(~@/assets/fonts/AvenirLTStd-Black.woff) format("woff");
+//    font-weight: 700;
+//    font-display: swap;
+//}
+
+body {
+  color: #333;
+  font-family: Avenir, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: CCSignLanguage, sans-serif;
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.btn {
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+}
+
+.btn-primary {
+  background-color: orangered;
+}
+
+.btn-primary-outlined {
+  color: inherit;
+  border: 1px solid orangered;
+}
+
+.btn-secondary {
+  background-color: cornflowerblue;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  @extend .container;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .logo {
+    img {
+      height: 2.5rem;
+      width: auto;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a + a {
+      margin-left: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+
+    .logo {
+      margin-right: auto;
+    }
+  }
+}
+
+.section-banner {
+  height: 50vh;
+  background-image: url(../images/banner3.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  mask-image: url(../images/bannerMask.svg);
+  mask-position: bottom;
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 1px #333;
+  }
+
+  &__content {
+    @extend .container;
+  }
+
+  @media (min-width: 768px) {
+    height: 80vh;
+  }
+}
+
+.section-general {
+  @extend .container;
+  display: grid;
+  grid:
+    'txt1'
+    'img1'
+    'txt2'
+    'img2';
+  grid-gap: 1.5rem;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .first-img {
+    grid-area: img1;
+  }
+
+  .first-text {
+    grid-area: txt1;
+  }
+
+  .second-img {
+    grid-area: img2;
+  }
+
+  .second-text {
+    grid-area: txt2;
+  }
+
+  @media (min-width: 768px) {
+    grid:
+      'txt1 img1'
+      'img2 txt2';
+  }
+}
+
+footer {
+  @extend .container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.age-groups {
+  @extend .container;
+  display: grid;
+  grid-gap: 1.5rem;
+  align-items: center;
+  grid:
+    'txt1'
+    'img1'
+    'txt2'
+    'img2'
+    'txt3'
+    'img3'
+    'txt4'
+    'img4'
+    'txt5'
+    'img5'
+    'txt6'
+    'img6';
+
+  @media (min-width: 768px) {
+    grid:
+      'txt1 img1'
+      'img2 txt2'
+      'txt3 img3'
+      'img4 txt4'
+      'txt5 img5'
+      'img6 txt6';
+  }
+
+  img {
+    width: 90%;
+    height: auto;
+  }
+
+  .name {
+    display: grid;
+    align-items: end;
+
+    h2, abbr {
+      grid-area: 1 / 1;
+    }
+
+    h2 {
+      color: orangered;
+      margin-bottom: 0;
+    }
+
+    abbr {
+      color: rgba(255, 0, 69, 0.3);
+      font-family: CCSignLanguage, sans-serif;
+      text-decoration: none;
+      font-size: 5rem;
+    }
+  }
+
+  .age {
+    color: cornflowerblue;
+  }
+
+  .kabs-img {
+    grid-area: img1;
+  }
+
+  .kabs-text {
+    grid-area: txt1;
+  }
+
+  .pieps-img {
+    grid-area: img2;
+  }
+
+  .pieps-text {
+    grid-area: txt2;
+  }
+
+  .jkn-img {
+    grid-area: img3;
+  }
+
+  .jkn-text {
+    grid-area: txt3;
+  }
+
+  .knapen-img {
+    grid-area: img4;
+  }
+
+  .knapen-text {
+    grid-area: txt4;
+  }
+
+  .jhn-img {
+    grid-area: img5;
+  }
+
+  .jhn-text {
+    grid-area: txt5;
+  }
+
+  .hn-img {
+    grid-area: img6;
+  }
+
+  .hn-text {
+    grid-area: txt6;
+  }
+}
+
+.calendar {
+  @extend .container;
+
+  margin-top: 1.5rem;
+}
