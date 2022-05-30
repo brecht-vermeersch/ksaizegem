@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\GeledingRepository;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -35,5 +36,11 @@ class ViewController extends AbstractController
         return $this->render('pages/leeftijdsgroepen.html.twig', [
             'geledingen' => $geledingRepository->findAll()
         ]);
+    }
+
+    #[Route('/{any}')]
+    public function oldUrls(): RedirectResponse
+    {
+        return $this->redirectToRoute('index');
     }
 }
