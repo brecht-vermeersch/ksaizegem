@@ -38,7 +38,7 @@ class ViewController extends AbstractController
         ]);
     }
 
-    #[Route('/{any}')]
+    #[Route('/{oldUrl}')]
     public function oldUrls(): RedirectResponse
     {
         return $this->redirectToRoute('index');
