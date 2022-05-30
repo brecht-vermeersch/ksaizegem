@@ -320,3 +320,93 @@ footer {
 
   margin-top: 1.5rem;
 }
+
+.section-address {
+  @extend .container;
+  margin-top: 1.5rem;
+
+  h2 {
+    text-align: center;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+
+    address {
+      font-size: 1.5rem;
+      background-image: url(../images/location.svg);
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding-left: 3.5rem;
+    }
+  }
+}
+
+.section-contact {
+  @extend .container;
+  margin-top: 1.5rem;
+
+  h2 {
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .geleidingen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .geleiding {
+      margin: 1.5rem;
+
+      img {
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      h3 {
+        font-family: CCSignLanguage, sans-serif;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+
+      li {
+        margin-bottom: 1rem;
+      }
+
+      .age-group, .call, .mail {
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-left: 2rem;
+        margin-left: 2rem;
+      }
+
+      .age-group {
+        background-image: url(../images/ageGroup.svg);
+      }
+
+      .call {
+        background-image: url(../images/call.svg);
+      }
+
+      .mail {
+        background-image: url(../images/mail.svg);
+      }
+    }
+  }
+}

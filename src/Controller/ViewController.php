@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\GeledingRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,9 +22,11 @@ class ViewController extends AbstractController
     }
 
     #[Route('/contact', name: 'contact')]
-    public function contact(): Response
+    public function contact(GeledingRepository $geledingRepository): Response
     {
-        return $this->render('pages/contact.html.twig');
+        return $this->render('pages/contact.html.twig', [
+            'geledingen' => $geledingRepository->findAll()
+        ]);
     }
 
     #[Route('/leeftijdsgroepen', name: 'ageGroups')]

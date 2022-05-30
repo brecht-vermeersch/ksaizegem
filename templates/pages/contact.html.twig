@@ -2,20 +2,35 @@
 
 {% block page_contents %}
     <main>
-        <h2>Locatie</h2>
+        <section class="section-address">
+            <h2>Locatie</h2>
 
-        <img src="#" alt="Kaart met de locatie van KSA Izegem">
-        <address>
-            Izegem 8870<br>
-            Meensestraat 100
-        </address>
+            <div>
+                <img src="{{ asset('/build/images/map.png') }}" alt="Kaart met de locatie van KSA Izegem">
 
-        <h2>Contactgegevens</h2>
+                <address>
+                    Izegem 8870<br>
+                    Meensestraat 100
+                </address>
+            </div>
+        </section>
 
-        <ul>
-            <li>
-                <img src="" alt="">
-            </li>
-        </ul>
+        <section class="section-contact">
+            <h2>Contactgegevens</h2>
+
+            <ul class="geleidingen">
+                {% for geleding in geledingen %}
+                    <li class="geleiding">
+                        <img src="{{ asset('/build/images/placeholder.png') }}" alt="Koas">
+                        <h3>{{ geleding.naam }}</h3>
+                        <ul>
+                            <li class="age-group">1e-2e leerjaar</li>
+                            <li class="call">{{ geleding.gsm }}</li>
+                            <li class="mail">{{ geleding.email }}</li>
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
     </main>
 {% endblock %}
