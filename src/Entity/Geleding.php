@@ -13,6 +13,9 @@ class Geleding
     #[ORM\Column(type: 'integer')]
     private $id;
 
+    #[ORM\Column(type: 'smallint')]
+    private $rangschikking;
+
     #[ORM\Column(type: 'string', length: 255)]
     private $naam;
 
@@ -20,17 +23,38 @@ class Geleding
     private $afkorting;
 
     #[ORM\Column(type: 'string', length: 255)]
+    private $leeftijdsgroep;
+
+    #[ORM\Column(type: 'string', length: 255)]
     private $email;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $gsm;
 
-    #[ORM\Column(type: 'integer')]
-    private $rangschikking;
+    #[ORM\Column(type: 'text')]
+    private $beschrijving;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $icoon;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $foto;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getRangschikking(): ?int
+    {
+        return $this->rangschikking;
+    }
+
+    public function setRangschikking(int $rangschikking): self
+    {
+        $this->rangschikking = $rangschikking;
+
+        return $this;
     }
 
     public function getNaam(): ?string
@@ -53,6 +77,18 @@ class Geleding
     public function setAfkorting(string $afkorting): self
     {
         $this->afkorting = $afkorting;
+
+        return $this;
+    }
+
+    public function getLeeftijdsgroep(): ?string
+    {
+        return $this->leeftijdsgroep;
+    }
+
+    public function setLeeftijdsgroep(string $leeftijdsgroep): self
+    {
+        $this->leeftijdsgroep = $leeftijdsgroep;
 
         return $this;
     }
@@ -81,14 +117,38 @@ class Geleding
         return $this;
     }
 
-    public function getRangschikking(): ?int
+    public function getBeschrijving(): ?string
     {
-        return $this->rangschikking;
+        return $this->beschrijving;
     }
 
-    public function setRangschikking(int $rangschikking): self
+    public function setBeschrijving(string $beschrijving): self
     {
-        $this->rangschikking = $rangschikking;
+        $this->beschrijving = $beschrijving;
+
+        return $this;
+    }
+
+    public function getIcoon(): ?string
+    {
+        return $this->icoon;
+    }
+
+    public function setIcoon(string $icoon): self
+    {
+        $this->icoon = $icoon;
+
+        return $this;
+    }
+
+    public function getFoto(): ?string
+    {
+        return $this->foto;
+    }
+
+    public function setFoto(string $foto): self
+    {
+        $this->foto = $foto;
 
         return $this;
     }

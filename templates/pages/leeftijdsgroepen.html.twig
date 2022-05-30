@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_contents %}
+    <main class="leeftijdsgroepen">
+        {% for geleding in geledingen %}
+            <div class="groep">
+                <div>
+                    <div class="naam">
+                        <abbr title="{{ geleding.naam }}">{{  geleding.afkorting }}</abbr>
+                        <h2>{{ geleding.naam }}</h2>
+                    </div>
+
+                    <h4 class="leeftijd">Leeftijd: {{ geleding.leeftijdsgroep }}</h4>
+                    <p>{{ geleding.beschrijving }}</p>
+                </div>
+
+                <img src="{{ asset(geleding.foto) }}" alt="Logo van de {{ geleding.naam }}">
+            </div>
+        {% endfor %}
+    </main>
+{% endblock %}

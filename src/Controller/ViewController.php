@@ -30,8 +30,10 @@ class ViewController extends AbstractController
     }
 
     #[Route('/leeftijdsgroepen', name: 'ageGroups')]
-    public function ageGroups(): Response
+    public function leeftijdsGroepen(GeledingRepository $geledingRepository): Response
     {
-        return $this->render('pages/age_groups.html.twig');
+        return $this->render('pages/leeftijdsgroepen.html.twig', [
+            'geledingen' => $geledingRepository->findAll()
+        ]);
     }
 }

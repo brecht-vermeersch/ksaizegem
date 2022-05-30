@@ -1,3 +1,5 @@
+// TODO color variables
+
 * {
   box-sizing: border-box;
 }
@@ -207,43 +209,20 @@ footer {
   margin-top: 1.5rem;
 }
 
-.age-groups {
+.leeftijdsgroepen {
   @extend .container;
-  display: grid;
-  grid-gap: 1.5rem;
-  align-items: center;
-  grid:
-    'txt1'
-    'img1'
-    'txt2'
-    'img2'
-    'txt3'
-    'img3'
-    'txt4'
-    'img4'
-    'txt5'
-    'img5'
-    'txt6'
-    'img6';
-
-  @media (min-width: 768px) {
-    grid:
-      'txt1 img1'
-      'img2 txt2'
-      'txt3 img3'
-      'img4 txt4'
-      'txt5 img5'
-      'img6 txt6';
-  }
 
   img {
     width: 90%;
     height: auto;
+    margin: 0 auto;
+    display: block;
   }
 
-  .name {
+  .naam {
     display: grid;
     align-items: end;
+    text-transform: capitalize;
 
     h2, abbr {
       grid-area: 1 / 1;
@@ -262,56 +241,37 @@ footer {
     }
   }
 
-  .age {
+  .leeftijd {
     color: cornflowerblue;
   }
 
-  .kabs-img {
-    grid-area: img1;
-  }
+  @media (min-width: 768px) {
+    .groep {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
 
-  .kabs-text {
-    grid-area: txt1;
-  }
+      &:nth-child(even) {
+        flex-direction: row-reverse;
 
-  .pieps-img {
-    grid-area: img2;
-  }
+        img {
+          margin-right: 1.5rem;
+        }
+      }
 
-  .pieps-text {
-    grid-area: txt2;
-  }
+      &:nth-child(odd) {
+        flex-direction: row;
 
-  .jkn-img {
-    grid-area: img3;
-  }
+        img {
+          margin-left: 1.5rem;
+        }
+      }
+    }
 
-  .jkn-text {
-    grid-area: txt3;
-  }
-
-  .knapen-img {
-    grid-area: img4;
-  }
-
-  .knapen-text {
-    grid-area: txt4;
-  }
-
-  .jhn-img {
-    grid-area: img5;
-  }
-
-  .jhn-text {
-    grid-area: txt5;
-  }
-
-  .hn-img {
-    grid-area: img6;
-  }
-
-  .hn-text {
-    grid-area: txt6;
+    img {
+      width: 40%;
+      margin-left: 1.5rem;
+    }
   }
 }
 
