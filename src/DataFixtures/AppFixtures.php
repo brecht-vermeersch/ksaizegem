@@ -23,7 +23,7 @@ class AppFixtures extends Fixture
                 'naam' => 'kabouters',
                 'afkorting' => 'kabs',
                 'leeftijdsgroep' => '6-8 jaar (1° en 2° leerjaar)',
-                'email' => '',
+                'email' => 'kabouters@ksaizegem.be',
                 'gsm' => '/',
                 'beschrijving' => 'De jongste leden van onze beweging noemen we de Kabouters. KSA betekent voor hen spelen, spelen en nog eens spelen. Ze kunnen zich op elke activiteit verwonderen over de nieuwe ervaringen die ze opdoen. Hun levendige fantasie zorgt ervoor dat ze op reis kunnen naar eender waar, met eender wie, om eender welk probleem op te lossen. Leiders zijn tijdens die reizen hun troost en toeverlaat.',
                 'icoon' => 'build/images/logo-kabouters.png',
