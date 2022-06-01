@@ -3,12 +3,30 @@
         <img src="{{ asset('build/images/logo.png') }}" alt="Logo van KSA Izegem" width="564" height="110">
     </a>
 
-    <nav>
+    <nav class="header-desktop">
         {% if is_granted('ROLE_ADMIN') %} <a href="{{ path('admin') }}">Admin</a> {% endif %}
         <a href="{{ path('ageGroups') }}">Leeftijdsgroepen</a>
         <a href="{{ path('calendar') }}">Kalender</a>
         <a href="{{ path('contact') }}">Contact</a>
         <a href="{{ shop_url }}">Tokshop</a>
-        <a href="{{ sign_up_url }}" class="btn btn-primary-outlined">Inschrijven</a>
+        <a href="{{ sign_up_url }}" class="btn btn-header btn-primary-outlined">Inschrijven</a>
+    </nav>
+    <nav class="header-mobile">
+        <div class="menuToggle">
+            <input type="checkbox" />
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu">
+                {% if is_granted('ROLE_ADMIN') %} <a href="{{ path('admin') }}">Admin</a> {% endif %}
+                <a href="{{ path('ageGroups') }}">Leeftijdsgroepen</a>
+                <a href="{{ path('calendar') }}">Kalender</a>
+                <a href="{{ path('contact') }}">Contact</a>
+                <a href="{{ shop_url }}">Tokshop</a>
+                <a href="{{ sign_up_url }}" class="btn btn-header btn-primary-outlined">Inschrijven</a>
+            </ul>
+        </div>
     </nav>
 </header>
