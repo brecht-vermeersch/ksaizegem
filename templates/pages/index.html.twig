@@ -28,12 +28,15 @@
                  class="first-img" width="603" height="383">
 
             <div class="second-text">
-                <h2>Leeftijdsgroepen</h2>
-                <p>Vraag je je af hoe de KSA te werk gaat en waar je zoon terecht zal komen? Neem dan zeker eens een kijkje bij onze geleidingen en ontmoet ons allemaal. Misschien vindt je bij een van ons een verrassing!</p>
-                <a href="{{ path('ageGroups') }}" class="btn btn-secondary">Bezoekje brengen</a>
+                <img src="{{ asset('build/images/ageGroups.png') }}" class="second-img" alt="Foto van een KSA-decor" width="600" height="273">
+                <div class="text">
+                    <h2>Leeftijdsgroepen</h2>
+                    <p>Vraag je je af hoe de KSA te werk gaat en waar je zoon terecht zal komen? Neem dan zeker eens een kijkje bij onze geleidingen en ontmoet ons allemaal. Misschien vindt je bij een van ons een verrassing!</p>
+                    <a href="{{ path('ageGroups') }}" class="btn btn-secondary">Bezoekje brengen</a>
+                </div>
             </div>
 
-            <img src="{{ asset('build/images/ageGroups.png') }}" class="second-img" alt="Foto van een KSA-decor" width="600" height="273">
+            
         </section>
     </main>
 {% endblock %}

@@ -393,39 +393,81 @@ header {
 .section-general {
   @extend .container;
   display: grid;
-  grid:
-    "txt1"
-    "img1"
-    "txt2"
-    "img2";
+  grid-template-areas: 
+            "c"
+            "a"
+            "b";
+  
+  grid-template-columns: 1fr;
   grid-gap: 1.5rem;
   align-items: center;
+  max-width: 435px;
+  margin-top: 2rem;
 
   img {
-    width: 100%;
+    width: 90%;
     height: auto;
+    margin: 0 auto;
+
+    @media (min-width: 576px) {
+      width: 383px;
+    }
+
+    @media (min-width: 992px) {
+      width: 100%;
+    }
   }
 
   .first-img {
-    grid-area: img1;
+    grid-area: c;
   }
 
   .first-text {
-    grid-area: txt1;
-  }
-
-  .second-img {
-    grid-area: img2;
+    grid-area: a;
+    max-width: 435px;
   }
 
   .second-text {
-    grid-area: txt2;
+    grid-area: b;
+    max-width: 435px;
+    margin-top: 2rem;
+
+    img {
+      width: 90%;
+
+      @media (min-width: 576px) {
+        width: 435px;
+      }
+
+      @media (min-width: 992px) {
+        width: 100%;
+      }
+    }
+
+    .text {
+      max-width: 100%;
+      margin: 16px auto;
+
+      h2 {
+        overflow-wrap: anywhere;
+      }
+
+      @media (min-width: 992px) {
+        max-width: 450px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      max-width: 100%;
+    }
   }
 
-  @media (min-width: 768px) {
-    grid:
-      "txt1 img1"
-      "img2 txt2";
+  @media (min-width: 992px) {
+    grid-template-areas: 
+            "a c"
+            "b b";
+    grid-template-columns: 435px;
+    max-width: 928px;
   }
 }
 
@@ -435,6 +477,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 1.5rem;
+
+  height: 80px
 }
 
 .leeftijdsgroepen {
