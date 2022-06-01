@@ -213,9 +213,18 @@ header {
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media (min-width: 992px) {
+      display: flex;
+    }
   }
 
   .header-mobile {
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+
     .menuToggle {
       display: flex;
       flex-direction: column;
