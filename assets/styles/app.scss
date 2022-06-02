@@ -581,6 +581,11 @@ footer {
 
   h2 {
     text-align: center;
+    font-size: 11vw;
+
+    @media (min-width: 576px) {
+      font-size: 3rem;
+    }
   }
 
   div {
@@ -590,16 +595,31 @@ footer {
 
     img {
       margin-bottom: 1.5rem;
-      width: 100%;
+      width: 540px;
     }
 
     address {
+      display: flex;
       font-size: 1.5rem;
-      background-image: url(../images/location.svg);
-      background-position: left center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      padding-left: 3.5rem;
+    }
+
+    address::before {
+      content: url(../images/location.svg);
+      width: 40px;
+      height: 40px;
+      margin-right: 1.5rem;
+    }
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+
+      img {
+        width: 70%;
+      }
+
+      address {
+        margin-left: auto;
+      }
     }
   }
 }
@@ -611,11 +631,16 @@ footer {
 
 .section-contact {
   @extend .container;
-  margin-top: 1.5rem;
+  margin-top: 4rem;
 
   h2 {
     text-align: center;
-  }
+    font-size: 11vw;
+
+    @media (min-width: 576px) {
+      font-size: 3rem;
+    }
+}
 
   ul {
     list-style: none;
@@ -629,6 +654,7 @@ footer {
 
     .geleiding {
       margin: 1.5rem;
+      margin-top: 0;
 
       img {
         max-width: 200px;
