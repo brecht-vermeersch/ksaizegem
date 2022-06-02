@@ -180,6 +180,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 60px;
 
   .logo {
     img {
@@ -505,6 +506,11 @@ footer {
     h2 {
       color: var(--primairy-accent-color);
       margin-bottom: 0;
+      font-size: 11vw;
+
+      @media (min-width: 576px) {
+        font-size: 3rem;
+      }
     }
 
     abbr {
@@ -513,8 +519,14 @@ footer {
       font-family: CCSignLanguage, sans-serif;
       text-decoration: none;
       text-transform: uppercase;
-      font-size: 6.5rem;
+      font-size: 24vw;
+
+      @media (min-width: 576px) {
+        font-size: 6.5rem;
+      }
     }
+
+
   }
 
   .leeftijd {
@@ -525,7 +537,7 @@ footer {
     .groep {
       display: flex;
       align-items: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 6rem;
 
       &:nth-child(even) {
         flex-direction: row-reverse;
@@ -545,8 +557,14 @@ footer {
     }
 
     img {
-      width: 50%;
+      width: 40%;
       margin-left: 1.5rem;
+    }
+  }
+
+  @media (min-width: 992px) {
+    img {
+      width: 50%;
     }
   }
 }
@@ -584,6 +602,11 @@ footer {
       padding-left: 3.5rem;
     }
   }
+}
+
+.align-center {
+  width: max-content;
+  margin: 3rem auto;
 }
 
 .section-contact {
