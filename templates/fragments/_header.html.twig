@@ -6,7 +6,7 @@
     <nav class="header-desktop">
         {% if is_granted('ROLE_ADMIN') %} <a href="{{ path('admin') }}">Admin</a> {% endif %}
         <a href="{{ path('ageGroups') }}">Leeftijdsgroepen</a>
-        <a href="{{ path('calendar') }}">Kalender</a>
+{#        <a href="{{ path('calendar') }}">Kalender</a>#}
         <a href="{{ path('contact') }}">Contact</a>
         <a href="{{ shop_url }}">Tokshop</a>
         <a href="{{ sign_up_url }}" class="btn btn-header btn-primary-outlined">Inschrijven</a>
