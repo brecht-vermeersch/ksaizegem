@@ -3,8 +3,6 @@ name: Build & Deploy
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -26,8 +24,7 @@ jobs:
         echo INSTAGRAM_URL=https://www.instagram.com/ksaizegem >> .env
         echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
         echo ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }} >> .env
-        echo CHEESE=yes >> .env
-    
+
     - uses: shivammathur/setup-php@v2
       with:
         php-version: 8.1
@@ -45,5 +42,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: ${{ secrets.FTP_PORT }}
         protocol: ftp
-        server-dir: /www/
-        dangerous-clean-slate: true
+        server-dir: ${{ secrets.FTP_SERVER_DIR }}
