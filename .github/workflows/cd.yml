@@ -45,5 +45,5 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: ${{ secrets.FTP_PORT }}
         protocol: ftp
-        server-dir: /www
+        server-dir: /www/
         dangerous-clean-slate: true
