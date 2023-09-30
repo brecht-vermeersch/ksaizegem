@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Build & Deploy
 
 on:
   push:
@@ -10,19 +10,40 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+
+    - run: |
+        echo APP_ENV=prod > .env
+        echo APP_SECRET=${{ secrets.APP_SECRET }} >> .env
+        echo SIGN_UP_URL=https://shop.ksaizegem.be/tokshop >> .env
+        echo SHOP_URL=https://shop.ksaizegem.be/tokshop >> .env
+        echo FACEBOOK_URL=https://www.facebook.com/ksaizegem >> .env
+        echo INSTAGRAM_URL=https://www.instagram.com/ksaizegem >> .env
+        echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
+        echo ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }} >> .env
+        echo CHEESE=yes >> .env
     
     - uses: shivammathur/setup-php@v2
       with:
         php-version: 8.1
         tools: composer:v2
-    - run: composer install --prefer-dist --no-progress --no-scripts
+    - run: composer install --prefer-dist --no-progress
     
     - uses: actions/setup-node@v3.8.1
     - run: npm ci
     - run: npm run build
+
+    - uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: ${{ secsecrets.FTP_PORT }}
+        protocol: ftp
+        server-dir: /www
+        dangerous-clean-slate: true
