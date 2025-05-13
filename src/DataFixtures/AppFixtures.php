@@ -35,7 +35,7 @@ class AppFixtures extends Fixture
                 'afkorting' => 'pieps',
                 'leeftijdsgroep' => '8-10 jaar (3° en 4° leerjaar)',
                 'email' => 'piepjongknapen@ksaizegem.be',
-                'gsm' => '0471 76 78 91',
+                'gsm' => '/',
                 'beschrijving' => 'De Piepjongknapen zitten halfweg hun carrière op de lagere school en zijn niet langer de jongste leden van KSA. Het is een enthousiaste bende die geregeld al echt samen kan spelen. De spelletjes worden al wat complexer. Lang stilzitten is niet aan hen besteed, in onze jeugdbeweging kunnen ze bewegen en vanalles uitproberen wat thuis niet kan.',
                 'icoon' => 'build/images/logo-piepjongknapen.png',
                 'foto' => 'build/images/monster-piepjongknapen.png'
@@ -90,7 +90,7 @@ class AppFixtures extends Fixture
                 'afkorting' => 'bond',
                 'leeftijdsgroep' => 'oud',
                 'email' => 'bond@ksaizegem.be',
-                'gsm' => '/',
+                'gsm' => '+32 470 18 86 88',
                 'beschrijving' => 'TODO',
                 'icoon' => 'build/images/logo-bond.png',
                 'foto' => 'build/images/monster-bond.png'
