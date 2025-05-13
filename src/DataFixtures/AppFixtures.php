@@ -90,7 +90,7 @@ class AppFixtures extends Fixture
                 'afkorting' => 'bond',
                 'leeftijdsgroep' => 'oud',
                 'email' => 'bond@ksaizegem.be',
-                'gsm' => '/',
+                'gsm' => '+32 470 18 86 88',
                 'beschrijving' => 'TODO',
                 'icoon' => 'build/images/logo-bond.png',
                 'foto' => 'build/images/monster-bond.png'
